@@ -4,6 +4,8 @@
 微信小程序项目
 涉及功能
 
+高仿Readhub小程序
+
 1.仿wx.showActionSheet组件， 因为wx.showActionSheet组件不可以调用分享，so自己手动实现
 
 2.canvas文章内容自动换行，内边距功能实现
