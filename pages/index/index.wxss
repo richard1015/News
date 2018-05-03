@@ -1,0 +1,47 @@
+/* pages/index/index.wxss */
+
+.index {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  /* background-image: url(http://aojixiaoxi.ks3-cn-beijing.ksyun.com/smallroutine/GPAApplet.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top center; */
+  background: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /*垂直居中*//* justify-content: center; 水平居中 */
+}
+
+.index .list {
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.index .list .title {
+  padding-left: 15rpx;
+  margin: 40rpx 0 40rpx 0;
+  display: block;
+  box-sizing: border-box;
+  font-size: 60rpx;
+  color: #333;
+}
+
+.index .list .content {
+  padding: 40rpx;
+  box-sizing: border-box;
+  backgroundasdasdasd  font-size: 30rpx;
+  line-height: 60rpx;
+  color: #000;
+  text-align: justify;
+  margin-bottom: 20rpx;
+}
+
+.index .list .content:last-child {
+  margin-bottom: 0;
+}
+
+.index .list .content_hover {
+  background: #e8e8e8;
+}

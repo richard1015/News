@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/contentShare/contentShare",
+    "pages/content/content",
+    "pages/index/index",
+    "pages/contentDetails/contentDetails"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "留学新闻",
+    "navigationBarTextStyle": "black"
+  }
+}

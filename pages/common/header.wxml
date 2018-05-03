@@ -1,0 +1,5 @@
+<template name="header">
+  <view class="header">
+    <image class='map' src='/imgs/map.png' mode="aspectFill"></image>
+  </view>
+</template>

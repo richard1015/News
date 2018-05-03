@@ -1,0 +1,38 @@
+/* pages/contentShare/contentShare.wxss */
+
+.content-share{
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  padding-bottom:120rpx;
+  box-sizing: border-box;
+}
+
+canvas {
+  border: 1px solid red;
+  box-sizing: border-box;
+}
+
+.foot-button {
+  height: 120rpx;
+  width: 100%;
+  background: #010101;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+}
+
+.foot-button button {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 100rpx;
+  width: 580rpx;
+  height: 84rpx;
+  position: absolute;
+  top: 50%;
+  margin-top: -42rpx;
+  left: 50%;
+  margin-left: -290rpx;
+  font-size: 32rpx;
+  color: #fff;
+  line-height: 84rpx;
+}

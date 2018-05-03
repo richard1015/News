@@ -1,0 +1,49 @@
+/**app.wxss**/
+@import "./font.wxss";
+
+.header {
+  width: 100%;
+  height: 257rpx;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+
+.header .map {
+  width: 100%;
+  height: 100%;
+}
+
+.foot {
+  width: 100%;
+  height: 552rpx;
+  bottom: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.foot .foottext {
+  color: #e83428;
+  font-size: 22rpx;
+  font-weight: bold;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 24rpx;
+}
+
+.foot .footimg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.hand {
+  height: 429rpx;
+  width: 273rpx;
+  position: absolute;
+  right: -90rpx;
+  top: 813rpx;
+}

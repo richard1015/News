@@ -1,0 +1,157 @@
+/* pages/content/content.wxss */
+
+swiper {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+
+.content {
+  /* position: fixed;  */
+  width: 100%;
+  height: 100%;
+  /* background-image: url(http://aojixiaoxi.ks3-cn-beijing.ksyun.com/smallroutine/GPAApplet.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top center; */
+  background: #f8f8f8;
+  /* display: flex; *//* flex-direction: column;  垂直显示  *//* align-items: center; 垂直居中 justify-content: center; 水平居中  */
+  box-sizing: border-box;
+  padding: 30rpx 20rpx 141rpx 20rpx;
+}
+
+/* 
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+} */
+
+.content .content_view {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 6rpx;
+  padding: 0rpx 30rpx 0 30rpx;
+  box-sizing: border-box;
+  /* border: 1px solid red; *//* position: relative; */
+}
+
+.content .content_view .title {
+  font-size: 40rpx;
+  color: #000;
+  text-align: justify;
+  line-height: 60rpx;
+  display: block;
+  margin-top: 50rpx;
+}
+
+.content .content_view .content_font {
+  font-size: 32rpx;
+  color: #666;
+  text-align: justify;
+  line-height: 60rpx;
+}
+
+.content .content_view .page-head-line {
+  width: 100%;
+  height: 2rpx;
+  background-color: #eee;
+  margin: 50rpx auto;
+  box-sizing: border-box;
+}
+
+.content .content_header {
+  width: auto;
+  height: 104rpx;
+  box-sizing: border-box;
+  position: fixed;
+  top: 30rpx;
+  left: 20rpx;
+  right: 20rpx;
+  z-index: 1;
+  background: linear-gradient(-180deg, #fff 0%, rgba(255, 255, 255, 0.00) 100%);
+}
+
+.content  .content_foot {
+  height: 112rpx;
+  width: auto;
+  bottom: 30rpx;
+  left: 20rpx;
+  right: 20rpx;
+  position: fixed;
+  box-sizing: border-box;
+  background: #fff;
+  padding: 0 30rpx;
+}
+
+.content .content_foot .page-head-line {
+  width: 100%;
+  height: 2rpx;
+  background-color: #eee;
+  box-sizing: border-box;
+}
+
+.content .content_foot button {
+  background: #fafafa;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  width: 180rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  color: #000;
+  position: absolute;
+  top: 50%;
+  left: 30rpx;
+  transform: translateY(-50%);
+}
+
+.content .content_foot image {
+  height: 32rpx;
+  width: 32rpx;
+  position: absolute;
+  top: 50%;
+  right: 30rpx;
+  transform: translateY(-50%);
+}
+
+.myActionSheet {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.4);
+  transform: translate3d(0, 1000px, 0);
+  transition: transform 0.5s;
+}
+
+.myActionSheet .ul {
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+  background: #edecf3;
+}
+
+.myActionSheet button {
+  height: 96rpx;
+  line-height: 96rpx;
+  font-size: 30rpx;
+  color: #333;
+  text-align: center;
+  border: none;
+  background: #fff;
+  box-sizing: border-box;
+  width: 100%;
+  border-radius: 0;
+}
+
+.myActionSheet button::after {
+  border-bottom: 1px solid #edecf3;
+  border-radius: 0;
+}
+
+.myActionSheet button:last-child {
+  margin-top: 10rpx;
+  border: none;
+  border-radius: 0;
+}

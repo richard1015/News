@@ -1,0 +1,19 @@
+<!--pages/index/index.wxml-->
+<scroll-view scroll-y="true" class="index">
+  <view class='list'>
+    <text class='title'>今天</text>
+    <view class='content' hover-class="content_hover" bindtap='toPage'>计算机科学专业：大数据尽在掌握之中</view>
+    <view class='content' hover-class="content_hover">2018年QS排名最新出炉，悉尼大学的毕业生就业能力在全澳大利亚排名第1</view>
+  </view>
+  <view class='list'>
+    <text class='title'>昨天</text>
+    <view class='content' hover-class="content_hover">面对人口老龄化社会，UTS正在寻找答案</view>
+    <view class='content' hover-class="content_hover">2018年QS排名最新出炉，悉尼大学的毕业生就业能力在全澳大利亚排名第1</view>
+    <view class='content' hover-class="content_hover">澳际教育集团再获维多利亚州政府嘉奖</view>
+  </view>
+  <view class='list'>
+    <text class='title'>2018-04-18</text>
+    <view class='content' hover-class="content_hover">计算机科学专业：大数据尽在掌握之中</view>
+    <view class='content' hover-class="content_hover">2018年QS排名最新出炉，悉尼大学的毕业生就业能力在全澳大利亚排名第1</view>
+  </view>
+</scroll-view>

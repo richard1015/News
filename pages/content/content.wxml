@@ -1,0 +1,34 @@
+<!--pages/content/content.wxml-->
+<swiper indicator-dots="true" current='1'>
+  <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+    <swiper-item>
+      <view class="content">
+        <view class='content_header'>
+        </view>
+        <scroll-view scroll-y="true" class='content_view'>
+          <text class='title'>2018年QS排名最新出炉，悉尼大学的毕业生就业能力在全澳大利亚排名第1</text>
+          <view class='page-head-line'></view>
+          <view class='content_font'>2018年QS全球毕业生就业能力排名榜于近期公布，其中，悉尼大学发挥稳定，与去年排名同为第4，超过麻省理工、剑桥、牛津等国内大学生心中的梦想大学。而墨尔本大学紧随其后屈居第7，新南威尔士大学排名36，昆士兰大学排名49、悉尼科技大学排名69，美国斯坦福大学毫无意外地占据榜首。值得一提的是，在本次的榜单中，澳洲共有8所大学进入全球前100名，其国民教育水平可见一斑。 2018年QS全球毕业生就业能力排名榜于近期公布，其中，悉尼大学发挥稳定，与去年排名同为第4，超过麻省理工、剑桥、牛津等国单中，澳洲共有8所大学进入全球前100名，其国民教育水平可见一斑。
+            2018年QS全球毕业生就业能力排名榜于近期公布，其中，悉尼大学发挥稳定，与去年排名同为第4，超过麻省理工、剑桥、牛津等国
+          </view>
+        </scroll-view>
+        <view class='content_foot'>
+          <view class='page-head-line'></view>
+          <button bindtap='toPage'>查看全文</button>
+          <image bindtap='share' mode="aspectFill" src='/imgs/share.png'></image>
+        </view>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
+<view class='myActionSheet' bindtap='cancelShare' animation="{{animation}}">
+  <view class='ul' catchtap="nothing">
+    <button open-type='share'>
+      <icon class='iconfont icon-wechat'></icon>微信好友
+    </button>
+    <button bindtap="saveShare">
+      <icon class='iconfont icon-erweimafenxiang'></icon>保存分享
+    </button>
+    <button bindtap='cancelShare'>取消</button>
+  </view>
+</view>

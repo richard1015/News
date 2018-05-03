@@ -1,0 +1,6 @@
+<template name="foot">
+  <view class="foot">
+    <image class='footimg' src='/imgs/foot.png' mode="aspectFill"></image>
+    <text class='foottext'>全价值教育服务平台</text>
+  </view>
+</template>
