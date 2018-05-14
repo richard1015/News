@@ -31,7 +31,10 @@
 .index .list .content {
   padding: 40rpx;
   box-sizing: border-box;
-  backgroundasdasdasd  font-size: 30rpx;
+  background: #fff;
+  border: 1px solid #eaeaea;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
+  font-size: 30rpx;
   line-height: 60rpx;
   color: #000;
   text-align: justify;
