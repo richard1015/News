@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/contentShare/contentShare",
     "pages/content/content",
-    "pages/index/index",
     "pages/contentDetails/contentDetails"
   ],
   "window": {
