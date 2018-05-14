@@ -14,6 +14,13 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+function getLocalTime(days = 0, date = new Date()) {
+  var d = new Date(date);
+  d.setDate(d.getDate() + days);
+  var m = d.getMonth() + 1;
+  return d.getFullYear() + '-' + m + '-' + d.getDate();
+}
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  getLocalTime: getLocalTime
 }

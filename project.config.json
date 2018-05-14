@@ -10,7 +10,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.9.94",
 	"appid": "wx1df3848032df8f34",
-	"projectname": "StudyNews",
+	"projectname": "GitHubNews",
 	"isGameTourist": false,
 	"condition": {
 		"search": {

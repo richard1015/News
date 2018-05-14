@@ -1,8 +1,8 @@
 // pages/contentShare/contentShare.js
+var apiHelper = require("../../utils/api.js");
 function findBreakPoint(text, width, context) {
   var min = 0;
   var max = text.length - 1;
-
   while (min <= max) {
     var middle = Math.floor((min + max) / 2);
     var middleWidth = context.measureText(text.substr(0, middle)).width;
@@ -19,8 +19,7 @@ function findBreakPoint(text, width, context) {
 
   return -1;
 }
-function breakLinesForCanvas(text, width, font) {
-  var context = wx.createCanvasContext('secondCanvas')
+function breakLinesForCanvas(context, text, width, font) {
   var result = [];
   var breakPoint = 0;
 
@@ -69,48 +68,12 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function (e) {
-    var that = this
-    var res = wx.getSystemInfoSync();
-    var canvasHeight = res.windowHeight;
-    var canvasWidth = res.windowWidth;
-
-
-    // 使用 wx.createContext 获取绘图上下文 context
-    var context = wx.createCanvasContext('secondCanvas')
-
-    //设置行高
-    var lineHeight = 30;
-    //左边距
-    var paddingLeft = 20;
-    //右边距
-    var padingRight = 20;
-    //当前行高
-    var currentLineHeight = 0;
-
-    //设置标题
-    var resultTitle = breakLinesForCanvas('2018年QS排名最新出炉，悉尼大学的毕业生就业能力在全澳大利亚排名第1', canvasWidth - paddingLeft - padingRight, '20px PingFangSC-Regular');
-    context.font = "20px PingFangSC-Regular";
-    resultTitle.forEach(function (line, index) {
-      currentLineHeight = lineHeight * index + 30;
-      context.fillText(line, paddingLeft, currentLineHeight);
+    var contentTitle = "2018年QS排名最新出炉，悉尼大学的毕业生就业能力在全澳大利亚排名第1";
+    var contentStr = "2018年QS全球毕业生就业能力排名榜于近期公布，其中，悉尼大学发挥稳定，与去年排名同为第4，超过麻省理工、剑桥、牛津等国内大学生心中的梦想大学。而墨尔本大学紧随其后屈居第7，新南威尔士大学排名36，昆士兰大学排名49、悉尼科技大学排名69，美国斯坦福大学毫无意外地占据榜首。值得一提的是，在本次的榜单中。2018年QS全球毕业生就业能力排名榜于近期公布，其中，悉尼大学发挥稳定，与去年排名同为第4，超过麻省理工、剑桥、牛津等国内大学生心中的梦想大学。而墨尔本大学紧随其后屈居第7，新南威尔士大学排名36，昆士兰大学排名49、悉尼科技大学排名69，美国斯坦福大学毫无意外地占据榜首。值得一提的是，在本次的榜单中。2018年QS全球毕业生就业能力排名榜于近期公布，其中，悉尼大学发挥稳定，与去年排名同为第4，超过麻省理工、剑桥、牛津等国内大学生心中的梦想大学。而墨尔本大学紧随其后屈居第7，新南威尔士大学排名36，昆士兰大学排名49、悉尼科技大学排名69，美国斯坦福大学毫无意外地占据榜首。值得一提的是，在本次的榜单中。";
+    this.drawInit({
+      title: contentTitle,
+      intro: contentStr
     });
-    //画分割线
-    currentLineHeight += 30;
-    context.setLineDash([6, 3.75]);
-    context.moveTo(paddingLeft, currentLineHeight);
-    context.lineTo(canvasWidth - padingRight, currentLineHeight);
-    context.strokeStyle = '#cccccc';
-    context.stroke();
-    //设置内容
-    var result = breakLinesForCanvas('2018年QS全球毕业生就业能力排名榜于近期公布，其中，悉尼大学发挥稳定，与去年排名同为第4，超过麻省理工、剑桥、牛津等国内大学生心中的梦想大学。而墨尔本大学紧随其后屈居第7，新南威尔士大学排名36，昆士兰大学排名49、悉尼科技大学排名69，美国斯坦福大学毫无意外地占据榜首。值得一提的是，在本次的榜单中。2018年QS全球毕业生就业能力排名榜于近期公布，其中，悉尼大学发挥稳定，与去年排名同为第4，超过麻省理工、剑桥、牛津等国内大学生心中的梦想大学。而墨尔本大学紧随其后屈居第7，新南威尔士大学排名36，昆士兰大学排名49、悉尼科技大学排名69，美国斯坦福大学毫无意外地占据榜首。值得一提的是，在本次的榜单中。2018年QS全球毕业生就业能力排名榜于近期公布，其中，悉尼大学发挥稳定，与去年排名同为第4，超过麻省理工、剑桥、牛津等国内大学生心中的梦想大学。而墨尔本大学紧随其后屈居第7，新南威尔士大学排名36，昆士兰大学排名49、悉尼科技大学排名69，美国斯坦福大学毫无意外地占据榜首。值得一提的是，在本次的榜单中。', canvasWidth - paddingLeft - padingRight, '16px PingFangSC-Regular');
-    //字体大小
-    context.font = "16px PingFangSC-Regular";
-    //字体颜色
-    context.fillStyle = '#666666';
-    result.forEach(function (line, index) {
-      context.fillText(line, paddingLeft, lineHeight * index + currentLineHeight + 30);
-    });
-    context.draw();
   },
   saveImg: function () {
     var that = this;
@@ -139,6 +102,74 @@ Page({
         })
       }
     })
+  },
+  /**
+   * 绘制图片
+   */
+  drawInit: function (info) {
+    var contentTitle = info.title;
+    var contentStr = info.intro;
+    var that = this
+    var res = wx.getSystemInfoSync();
+    var canvasHeight = res.windowHeight;
+    var canvasWidth = res.windowWidth;
+    // 获取canvas的的宽  自适应宽（设备宽/750) px
+    var Rpx = canvasWidth / 375;
+    // 使用 wx.createContext 获取绘图上下文 context
+    var context = wx.createCanvasContext('secondCanvas')
+
+    //设置行高
+    var lineHeight = Rpx * 30;
+    //左边距
+    var paddingLeft = Rpx * 20;
+    //右边距
+    var padingRight = Rpx * 20;
+    //当前行高
+    var currentLineHeight = Rpx * 20;
+
+    //设置标题
+    var resultTitle = breakLinesForCanvas(context, contentTitle, canvasWidth - paddingLeft - padingRight, `${(Rpx * 20).toFixed(0)}px PingFangSC-Regular`);
+    resultTitle.forEach(function (line, index) {
+      currentLineHeight += Rpx * 30;
+      context.fillText(line, paddingLeft, currentLineHeight);
+    });
+    //画分割线
+    currentLineHeight += Rpx * 30;
+    context.setLineDash([Rpx * 6, Rpx * 3.75]);
+    context.moveTo(paddingLeft, currentLineHeight);
+    context.lineTo(canvasWidth - padingRight, currentLineHeight);
+    context.strokeStyle = '#cccccc';
+    context.stroke();
+    //设置内容
+    var result = breakLinesForCanvas(context, contentStr || '无内容', canvasWidth - paddingLeft - padingRight, `${(Rpx * 16).toFixed(0)}px PingFangSC-Regular`);
+    //字体颜色
+    context.fillStyle = '#666666';
+    result.forEach(function (line, index) {
+      currentLineHeight += Rpx * 30;
+      context.fillText(line, paddingLeft, currentLineHeight);
+    });
+    //查看是否 有广告位 需绘制
+    apiHelper.paramData.cmd = "studyAbroadNews/getNewsAdvertising"; //cmd
+    apiHelper.paramData.param = {
+      pageCode: "introPage"
+    };
+    apiHelper.post((res) => {
+      if (res.State == 0 && res.Value) {
+        let imgUrl = res.Value.img;
+        wx.downloadFile({
+          url: imgUrl, //仅为示例，并非真实的资源
+          success: function (res) {
+            // 只要服务器有响应数据，就会把响应内容写入文件并进入 success 回调，业务需要自行判断是否下载到了想要的内容
+            if (res.statusCode === 200) {
+              context.drawImage(res.tempFilePath, paddingLeft, currentLineHeight + Rpx * 30, canvasWidth - paddingLeft - padingRight, Rpx * 200);
+              context.draw();
+            }
+          }
+        })
+      } else {
+        context.draw();
+      }
+    });
   },
   /**
    * 生命周期函数--监听页面显示
