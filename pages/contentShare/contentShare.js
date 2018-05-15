@@ -21,21 +21,21 @@ function findBreakPoint(text, width, context) {
 }
 function breakLinesForCanvas(context, text, width, font) {
   var result = [];
-  var breakPoint = 0;
-
   if (font) {
     context.font = font;
   }
-
-  while ((breakPoint = findBreakPoint(text, width, context)) !== -1) {
-    result.push(text.substr(0, breakPoint));
-    text = text.substr(breakPoint);
+  var textArray = text.split('\r\n');
+  for (let i = 0; i < textArray.length; i++) {
+    let item = textArray[i];
+    var breakPoint = 0;
+    while ((breakPoint = findBreakPoint(item, width, context)) !== -1) {
+      result.push(item.substr(0, breakPoint));
+      item = item.substr(breakPoint);
+    }
+    if (item) {
+      result.push(item);
+    }
   }
-
-  if (text) {
-    result.push(text);
-  }
-
   return result;
 }
 Page({
