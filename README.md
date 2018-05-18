@@ -10,9 +10,13 @@
 
 2.canvas文章内容自动换行，内边距功能实现 canvas绘图 
 
-3.canvas动态生成图片功能
+3.canvas动态生成图片功能  
 
-4.文章左右滑动查看功能
+4.canvas 自动适配 
+
+5.文章左右滑动查看功能
+
+6.目前有一个地方待优化，就当文章内容过多时，需要等比例缩放内容（解决中……）
 
 ![首页](https://gitee.com/uploads/images/2018/0503/113000_fec66a5b_1353184.png "屏幕截图.png")
 ![文章详情](https://gitee.com/uploads/images/2018/0503/113029_09f90faa_1353184.png "屏幕截图.png")
