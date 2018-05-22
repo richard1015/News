@@ -1,5 +1,5 @@
 <!--pages/content/content.wxml-->
-<swiper indicator-dots="true" current='1'>
+<swiper next-margin="40rpx" indicator-dots="false" current='1'>
   <block wx:for="{{imgUrls}}" wx:key="{{index}}">
     <swiper-item>
       <view class="content">
