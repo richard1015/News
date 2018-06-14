@@ -15,7 +15,7 @@ function Decrypt(word, key, iv) {
   return decryptedStr.toString();
 }
 
-function post(cb, requestMethod = "post") {
+function post(cb) {
   //check reqData
   var key = CryptoJS.enc.Utf8.parse(CONFIG.key);
   var iv = CryptoJS.enc.Utf8.parse(CONFIG.iv);
@@ -25,6 +25,7 @@ function post(cb, requestMethod = "post") {
   var sign = Encrypt(JSON.stringify(requestData), key, iv);
   sign = encodeURIComponent(sign);
   var sendData = `key=${sign}`;
+
   var self = this;
   // console.log(`${host}?${sendData}`);
   wx.getNetworkType({
@@ -51,7 +52,8 @@ function post(cb, requestMethod = "post") {
         wx.request({
           url: host,
           data: requestData,
-          method: requestMethod, // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+          loadingState: this.errorMsgState,
+          method: "post", // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
           header: {
             'content-type': 'application/x-www-form-urlencoded',
             'source': "2",//来源 1留学2gpa
@@ -78,7 +80,21 @@ function post(cb, requestMethod = "post") {
               resData.Value = {};
               resData.Msg = "系统错误,请稍后重试！";
             } else if (response.statusCode == 200) {
-              resData = response.data;
+              if (response.data.head.code == 0) {
+                if (response.data.body.code == 0) {
+                  resData.State = 0;
+                  resData.Value = response.data.body.value;
+                  resData.Msg = response.data.body.message;
+                } else {
+                  resData.State = 1;
+                  resData.Value = response.data;
+                  resData.Msg = response.data.body.msg;
+                }
+              } else {
+                resData.State = 1;
+                resData.Value = response.data;
+                resData.Msg = response.data.body.message;
+              }
             }
             // console.log(resData)
             typeof cb == "function" && cb(resData)
@@ -106,7 +122,9 @@ function post(cb, requestMethod = "post") {
       }
     }
   })
+
 }
+
 module.exports = {
   paramData: {
     "param": {},

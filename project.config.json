@@ -1,16 +1,16 @@
 {
 	"description": "项目配置文件。",
 	"setting": {
-		"urlCheck": false,
+		"urlCheck": true,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.0.9",
-	"appid": "wxf9c81770b8ce723a",
-	"projectname": "News",
+	"libVersion": "1.9.94",
+	"appid": "wx1df3848032df8f34",
+	"projectname": "GitHubNews",
 	"isGameTourist": false,
 	"condition": {
 		"search": {
