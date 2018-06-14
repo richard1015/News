@@ -34,11 +34,16 @@
   background: #fff;
   border: 1px solid #eaeaea;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.08);
-  font-size: 30rpx;
-  line-height: 60rpx;
+  font-size: 25rpx;
+  line-height: 50rpx;
   color: #000;
   text-align: justify;
   margin-bottom: 20rpx;
+}
+.index .list .content .title{
+  font-size: 30rpx;
+  line-height: 60rpx;
+  color: #000;
 }
 
 .index .list .content:last-child {
