@@ -17,13 +17,8 @@ Page({
     newsArray: []//所有文章存放数组
   },
   toPage: function (event) {
-    // let array = this.data.array.map(item => { return item.array });
-    // for (let i = 0; i < array.length; i++)
-    //   for (let j = 0; j < array[i].length; j++)
-    //     this.data.newsArray.push(array[i][j])
-    //保留当前页面，跳转到应用内的某个页面（最多打开5个页面，之后按钮就没有响应的）
     wx.navigateTo({
-      url: `/pages/content/content?id=${event.target.id}`
+      url: `/pages/content/content?id=${event.currentTarget.id}`
     })
   },
   /**

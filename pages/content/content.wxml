@@ -1,21 +1,22 @@
-<!--pages/content/content.wxml-->
-<swiper next-margin="40rpx" indicator-dots="false" current='1'>
-  <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+<!--pages/content/content.wxml -->
+<swiper previous-margin="{{previousMargin}}rpx" next-margin="{{nextMargin}}rpx" indicator-dots="{{false}}" bindchange="swiperChange" current='{{swiperIndex}}'>
+  <block wx:for="{{newsArray}}" wx:for-item="item" wx:key="{{index}}">
     <swiper-item>
       <view class="content">
         <view class='content_header'>
         </view>
-        <scroll-view scroll-y="true" class='content_view'>
-          <text class='title'>2018年QS排名最新出炉，悉尼大学的毕业生就业能力在全澳大利亚排名第1</text>
+        <view class='content_view'>
+          <text class='title'>{{item.title}}</text>
           <view class='page-head-line'></view>
-          <view class='content_font'>2018年QS全球毕业生就业能力排名榜于近期公布，其中，悉尼大学发挥稳定，与去年排名同为第4，超过麻省理工、剑桥、牛津等国内大学生心中的梦想大学。而墨尔本大学紧随其后屈居第7，新南威尔士大学排名36，昆士兰大学排名49、悉尼科技大学排名69，美国斯坦福大学毫无意外地占据榜首。值得一提的是，在本次的榜单中，澳洲共有8所大学进入全球前100名，其国民教育水平可见一斑。 2018年QS全球毕业生就业能力排名榜于近期公布，其中，悉尼大学发挥稳定，与去年排名同为第4，超过麻省理工、剑桥、牛津等国单中，澳洲共有8所大学进入全球前100名，其国民教育水平可见一斑。
-            2018年QS全球毕业生就业能力排名榜于近期公布，其中，悉尼大学发挥稳定，与去年排名同为第4，超过麻省理工、剑桥、牛津等国
-          </view>
-        </scroll-view>
+          <view class='content_font'>{{item.summary}}</view>
+        </view>
         <view class='content_foot'>
           <view class='page-head-line'></view>
-          <button bindtap='toPage'>查看全文</button>
-          <image bindtap='share' mode="aspectFill" src='/imgs/share.png'></image>
+          <button bindtap='toPage' id="{{item.id}}">查看全文</button>
+          <button wx:if="{{backButton}}" class='back_index' bindtap='toPageIndex'>返回首页</button>
+          <view class='share-img' id="{{item.id}}" bindtap='share'>
+            <image mode="aspectFill" src='/imgs/share.png' id="{{item.id}}" bindtap='share'></image>
+          </view>
         </view>
       </view>
     </swiper-item>
