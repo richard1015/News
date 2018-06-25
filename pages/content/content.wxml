@@ -12,10 +12,10 @@
         </view>
         <view class='content_foot'>
           <view class='page-head-line'></view>
-          <button bindtap='toPage' id="{{item.id}}">查看全文</button>
+          <button bindtap='toPage' id="{{item.newsArray[0].url}}">查看全文</button>
           <button wx:if="{{backButton}}" class='back_index' bindtap='toPageIndex'>返回首页</button>
-          <view class='share-img' id="{{item.id}}" bindtap='share'>
-            <image mode="aspectFill" src='/imgs/share.png' id="{{item.id}}" bindtap='share'></image>
+          <view class='share-img' id="{{item.id}}" data-title="{{item.title}}" data-content='{{item.summary}}' bindtap='share'>
+            <image mode="aspectFill" src='/imgs/share.png' id="{{item.id}}" data-title="{{item.title}}" data-content='{{item.summary}}' bindtap='share'></image>
           </view>
         </view>
       </view>

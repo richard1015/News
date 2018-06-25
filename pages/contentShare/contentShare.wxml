@@ -2,7 +2,7 @@
 <!-- canvas.wxml -->
 <view class='content-share'>
   <canvas style="width: 100%; height:100%;background:#ffffff;" canvas-id="secondCanvas" binderror="canvasIdErrorCallback"></canvas>
-   <view class='foot-button'>
+  <view class='foot-button'>
     <button bindtap='saveImg'>保存卡片</button>
-  </view> 
+  </view>
 </view>
