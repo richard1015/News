@@ -18,6 +18,9 @@
 
 6.canvas绘图时 ，目前有一个地方待优化，就当文章内容过多时，需要等比例缩放内容（解决中……）
 
+
+![演示](/imgs/%E6%BC%94%E7%A4%BA.gif "演示.gif")
+
 ![首页](https://gitee.com/uploads/images/2018/0503/113000_fec66a5b_1353184.png "屏幕截图.png")
 ![文章详情](https://gitee.com/uploads/images/2018/0503/113029_09f90faa_1353184.png "屏幕截图.png")
 ![文章详情左右滑动功能](https://gitee.com/uploads/images/2018/0503/113128_e9e31bc6_1353184.png "屏幕截图.png")
