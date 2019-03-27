@@ -70,7 +70,7 @@ Page({
             let array = res.Value;
             for (let i = 0; i < array.length; i++) {
               // console.log(array[i].publishDate)
-              let pushdate = array[i].publishDate.substr(0, 10);
+              let pushdate = array[i].updatedAt.substr(0, 10);
               // console.log(pushdate)
               pushdate = util.getLocalTime(0, new Date(pushdate));
               if (pushdate == util.getLocalTime()) {
