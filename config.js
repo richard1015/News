@@ -2,7 +2,7 @@
  * 小程序配置文件
  */
 // 测试服务器ip
-// var host = "http://192.168.160.163:7001/"
+// var host = "http://127.0.0.1:7001/"
 // 远程线上服务器ip
 var host ="https://zhuzhida.vip/"
 var config = {

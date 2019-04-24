@@ -160,7 +160,7 @@ Page({
       console.log(res.target)
     }
     return {
-      title: '留学新闻',
+      title: '测试',
       path: '/pages/index/index',
       success: function (res) {
         // 转发成功

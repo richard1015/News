@@ -20,6 +20,12 @@ Page({
     currentDateIsNoData: true, //当前天是否还有数据
   },
   toPage: function(event) {
+    wx.showToast({
+      title: `暂未开放！`,
+      icon: 'none',
+      duration: 2000
+    })
+    return;
     wx.navigateTo({
       url: `/pages/contentDetails/contentDetails?id=${event.target.id}`
     })
