@@ -18,9 +18,9 @@
 
 6.canvas绘图时 ，目前有一个地方待优化，就当文章内容过多时，需要等比例缩放内容（解决中……）
 
-#### 在线体验
+#### 在线体验 当前小程序未审核通过请点击微信IDE链接
 ![演示](/imgs/qrcode.jpg "qrcode.jpg")
-
+微信IDE演示代码https://developers.weixin.qq.com/s/WCkpsTm97M7p
 
 ![演示](/imgs/%E6%BC%94%E7%A4%BA.gif "演示.gif")
 
